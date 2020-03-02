@@ -6,8 +6,7 @@ function isTextIncluded(film, queryText) {
 }
 
 function filterFilms(films, queryText) {
-  const filteredFilms = films
-    .filter((film) => isTextIncluded(film, queryText));
+  const filteredFilms = films.filter((film) => isTextIncluded(film, queryText));
 
   return filteredFilms;
 }

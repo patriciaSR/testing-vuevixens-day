@@ -1,4 +1,4 @@
-import { unfoldDescription, printFilm, printFilms } from '../js/printFilms.js';
+import { printFilm, printFilms, unfoldDescription } from '../js/printFilms.js';
 import { mockFilms } from './fixtures/variables-fixtures.js';
 
 describe('unfoldDescription function', () => {
@@ -28,13 +28,11 @@ describe('printFilms functions', () => {
       const result = printFilm(film);
 
       const resultTitle = result.querySelector('.film__title');
-      const resultImage = result.querySelector('.film__image');
       const resultDescription = result.querySelector('.film__description-text');
 
       expect(result.tagName).toBe('LI');
       expect(resultTitle.tagName).toBe('H2');
       expect(resultTitle.textContent).toBe(film.title);
-      expect(resultImage.tagName).toBe('IMG');
       expect(resultDescription.tagName).toBe('P');
       expect(resultDescription.textContent).toBe(film.description);
       expect(resultDescription.classList).toContain('hidden');

@@ -33,28 +33,28 @@ describe('isTextIncluded function', () => {
 describe('filterFilms function , filter films by queries', () => {
   test('it returns all elements if filter is empty', () => {
     const queryText = '';
-    const director = null;
-    const filters = {
-      queryText,
-      director,
-    };
+    // const director = null;
+    // const filters = {
+    //   queryText,
+    //   director,
+    // };
 
-    const result = filterFilms(mockFilms, filters);
+    const result = filterFilms(mockFilms, queryText);
 
     expect(result).toEqual(mockFilms);
   });
 
   test('it returns all elements that contains "bambi"', () => {
     const queryText = 'bambi';
-    const director = null;
-    const filters = {
-      queryText,
-      director,
-    };
+    // const director = null;
+    // const filters = {
+    //   queryText,
+    //   director,
+    // };
 
     const expected = mockFilms[0];
 
-    const result = filterFilms(mockFilms, filters);
+    const result = filterFilms(mockFilms, queryText);
 
     expect(result.length).toBe(1);
     expect(result).toContain(expected);
@@ -62,28 +62,28 @@ describe('filterFilms function , filter films by queries', () => {
 
   test('it returns all elements that contains "dis" in description', () => {
     const queryText = 'dis';
-    const director = null;
-    const filters = {
-      queryText,
-      director,
-    };
+    // const director = null;
+    // const filters = {
+    //   queryText,
+    //   director,
+    // };
 
     const expected = [mockFilms[0], mockFilms[1], mockFilms[3]];
 
-    const result = filterFilms(mockFilms, filters);
+    const result = filterFilms(mockFilms, queryText);
 
     expect(result.length).toBe(3);
     expect(result).toEqual(expect.arrayContaining(expected));
   });
 
   test('it throws an error if queryText is undefined', () => {
-    const director = 'luis';
-    const filters = {
-      director,
-    };
+    // const director = 'luis';
+    // const filters = {
+    //   director,
+    // };
 
     expect(() => {
-      filterFilms(mockFilms, filters);
+      filterFilms(mockFilms, undefined);
     }).toThrow();
   });
 });
