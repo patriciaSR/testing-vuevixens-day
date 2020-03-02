@@ -1,0 +1,25 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "import/prefer-default-export": 0,
+    "import/extensions": 0,
+    "strict": 0,
+    "no-param-reassign": 0,
+    "import/no-dynamic-require": 0,
+    "global-require": 0
+  }
+}

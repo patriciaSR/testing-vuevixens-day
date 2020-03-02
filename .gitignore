@@ -1,0 +1,8 @@
+// Node Modules Folder
+node_modules
+
+// Visual Code Folder
+.vscode
+
+// Jest coverage
+coverage

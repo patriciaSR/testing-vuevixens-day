@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Películas Ghibli</title>
+  <link rel="shortcut icon" href="images/page-icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="app__header">
+    <h1 class="header__title">Studio Ghibli Films</h1>
+    <div class="headder__img-container">
+      <img src="images/studio_ghibli_logo.png" alt="logo estudio ghibli" class="header__image">
+    </div>
+  </header>
+  <main class="app__main">
+    <section class="main__filter">
+      <label class="filter__label" for="filter"> Search a film...
+        <input class="filter__input" type="text" name="query" id="filter" placeholder="Totoro...">
+      </label>
+    </section>
+
+    <section class="main__films">
+      <ol class="films__list">
+
+      </ol>
+      <div class="films__info-container"></div>
+    </section>
+  </main>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+
+</html>
