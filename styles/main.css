@@ -89,12 +89,13 @@ h1 {
 .list__film {
   background-color: #ece3d4;
   margin: 10px;
-  padding: 10px;
-  max-width: 320px;
+  padding: 30px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  box-shadow: 0 19px 38px rgba(#000, 0.3), 0 15px 12px rgba(#000, 0.22);
+  align-items: flex-start;
+  border-radius: 10px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
 }
 .list__film:hover {
   transform: scale(1.1);
@@ -114,7 +115,7 @@ h1 {
   left: 100%;
   top: 0;
   position: absolute;
-  width: 200px;
+  width: 60px;
   height: 30px;
   background-image: url("../images/totoro-chibi-walk.png");
   background-size: contain;
