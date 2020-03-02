@@ -116,3 +116,6 @@ Al lanzar este comando, se genera una carpeta coverage, donde en la carpeta `lco
 ![resultado de la cobertura en el navegador](images/tests/Screenshot-html.png)
 
 
+## Uso de Cypress
+lanzar test e2e:
+`npx cypress open`
