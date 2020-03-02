@@ -1,4 +1,4 @@
-import { noResults, errorMessage, addLoader, removeLoader } from '../js/infoSection.js';
+import { errorMessage, noResults } from '../js/infoSection.js';
 
 describe('infoSection testing', () => {
   beforeEach(() => {
@@ -52,47 +52,6 @@ describe('infoSection testing', () => {
       expect(() => {
         errorMessage();
       }).toThrow();
-    });
-  });
-
-  describe('addLoader function', () => {
-    test('it creates a <p> inside an element', () => {
-      const infoSection = document.querySelector('div');
-
-      addLoader(infoSection);
-      const result = infoSection.firstChild;
-
-      expect(result.tagName).toBe('P');
-      expect(result.textContent).toBe('Loading...');
-      expect(result.classList).toContain('spinner');
-    });
-
-    test('it throws an error if container is undefined', () => {
-      expect(() => {
-        addLoader();
-      }).toThrow();
-    });
-  });
-
-  describe('removeLoader function', () => {
-    test('it removes spinner <p>', () => {
-      document.body.innerHTML = `
-        <div>
-        <p class="spinner"></p>
-        </div>
-      `;
-
-      removeLoader();
-      const infoSection = document.querySelector('div');
-
-      expect(infoSection.length).toBe(undefined);
-    });
-
-    test('it does nothing if spinner is undefined', () => {
-      removeLoader();
-      const infoSection = document.querySelector('div');
-
-      expect(infoSection.length).toBe(undefined);
     });
   });
 });

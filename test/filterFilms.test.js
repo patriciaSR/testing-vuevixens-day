@@ -1,4 +1,4 @@
-import { filterFilms, getFilters, isTextIncluded } from '../js/filterFilms.js';
+import { filterFilms, isTextIncluded } from '../js/filterFilms.js';
 import { mockFilms } from './fixtures/variables-fixtures.js';
 
 describe('isTextIncluded function', () => {
@@ -76,36 +76,6 @@ describe('filterFilms function , filter films by queries', () => {
     expect(result).toEqual(expect.arrayContaining(expected));
   });
 
-  test('it return all films that contains "nemo" and "luis"s director', () => {
-    const queryText = 'nemo';
-    const director = 'luis';
-    const filters = {
-      queryText,
-      director,
-    };
-
-    const result = filterFilms(mockFilms, filters);
-
-    expect(result.length).toBe(1);
-    expect(result).toContain(mockFilms[2]);
-  });
-
-  test('it return all films that contains luis"s director', () => {
-    const queryText = '';
-    const director = 'luis';
-    const filters = {
-      queryText,
-      director,
-    };
-
-    const expected = mockFilms[2];
-
-    const result = filterFilms(mockFilms, filters);
-
-    expect(result.length).toBe(2);
-    expect(result).toContain(expected);
-  });
-
   test('it throws an error if queryText is undefined', () => {
     const director = 'luis';
     const filters = {
@@ -115,62 +85,5 @@ describe('filterFilms function , filter films by queries', () => {
     expect(() => {
       filterFilms(mockFilms, filters);
     }).toThrow();
-  });
-});
-
-describe('getFilters function', () => {
-  // before test code execution
-  // othet methods: afterEach, before y after.
-  beforeEach(() => {
-    document.body.innerHTML = `
-      <input class="filter__input" />
-      <select class="directors__select">
-        <option value="Select a film director..."></option>
-        <option value="foo">Foo</option>
-        <option value="bar">Bar</option>
-      </select>
-    `;
-  });
-
-  test('it returns queryText filter', () => {
-    const queryInput = document.querySelector('.filter__input');
-    const queryText = 'hola';
-
-    queryInput.value = queryText;
-    const result = getFilters(queryInput);
-
-    expect(result.queryText).toEqual(queryText);
-  });
-
-  test('it returns director filter', () => {
-    const querySelect = document.querySelector('.directors__select');
-    const director = 'foo';
-
-    querySelect.value = director;
-    const result = getFilters();
-
-    expect(result.director).toEqual(director);
-  });
-
-  test('it returns null director filter', () => {
-    const querySelect = document.querySelector('.directors__select');
-    const director = 'Select a film director...';
-
-    querySelect.value = director;
-    const result = getFilters();
-
-    expect(result.director).toEqual(null);
-    // expect(result.director).toBeNull();
-  });
-
-  test('it returns " " queryText filter', () => {
-    const queryInput = document.querySelector('.filter__input');
-    const EmptyQueryText = '';
-
-    queryInput.value = EmptyQueryText;
-    const result = getFilters(queryInput);
-
-    expect(result.queryText).toEqual(EmptyQueryText);
-    // expect(result.director).toBeNull();
   });
 });

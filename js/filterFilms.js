@@ -5,12 +5,9 @@ function isTextIncluded(film, queryText) {
    || film.description.toLowerCase().includes(queryText);
 }
 
-function filterFilms(films, filters) {
-  const { queryText, director } = filters;
-
+function filterFilms(films, queryText) {
   const filteredFilms = films
-    .filter((film) => isTextIncluded(film, queryText))
-    .filter((film) => (director ? film.director === director : true));
+    .filter((film) => isTextIncluded(film, queryText));
 
   return filteredFilms;
 }
@@ -30,3 +27,4 @@ function getFilters(queryInput = '') {
 }
 
 export { filterFilms, getFilters, isTextIncluded };
+
