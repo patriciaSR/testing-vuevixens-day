@@ -12,19 +12,5 @@ function filterFilms(films, queryText) {
   return filteredFilms;
 }
 
-function getFilters(queryInput = '') {
-  let queryText = queryInput.value;
-  let director = document.querySelector('.directors__select').value;
-
-  if (director === 'Select a film director...') {
-    director = null;
-  }
-  if (!queryText) {
-    queryText = '';
-  }
-
-  return { queryText, director };
-}
-
-export { filterFilms, getFilters, isTextIncluded };
+export { filterFilms, isTextIncluded };
 

@@ -11,9 +11,6 @@ function printFilm(film) {
   const newFilm = createTag('li', '', 'list__film');
 
   const newTitle = createTag('h2', film.title, 'film__title');
-
-  const newImage = createTag('img', film.title, 'film__image');
-
   const newDescriptionTitle = createTag('h3', 'Description >', 'film__description-title');
   const newDescription = createTag('p', film.description, 'film__description-text');
 
@@ -22,7 +19,6 @@ function printFilm(film) {
   addEventToTag(newDescriptionTitle, 'click', unfoldDescription);
 
   newFilm.appendChild(newTitle);
-  newFilm.appendChild(newImage);
   newFilm.appendChild(newDescriptionTitle);
   newFilm.appendChild(newDescription);
 
@@ -38,7 +34,6 @@ function printFilms(list, infoSection, films = []) {
   infoSection.innerHTML = '';
 
   const newFilms = films.map((film) => printFilm(film));
-  //  const newFilms = films.map(printFilm); // Otra opción
 
   newFilms.forEach((film) => list.appendChild(film));
 
