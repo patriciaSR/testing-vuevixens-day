@@ -1,7 +1,8 @@
-body, h1 {
+body,
+h1 {
   margin: 0;
-  background-color: #82C1EC;
-  font-family: 'Open Sans', sans-serif;
+  background-color: #82c1ec;
+  font-family: "Open Sans", sans-serif;
 }
 .header__title {
   margin: 30px 0;
@@ -32,17 +33,17 @@ body, h1 {
   margin-top: 5px;
   width: 250px;
   border: 0px;
-  color: #5294EB;
+  color: #5294eb;
   border-radius: 15px;
   border-bottom: 3px solid #577342;
   padding: 15px;
   background-color: #252736;
 }
 .filter__input::placeholder {
-  color: #7AC0F2;
+  color: #7ac0f2;
 }
 .filter__input:hover {
-  box-shadow: 0 19px 38px rgba(#000, 0.30), 0 15px 12px rgba(#000, 0.22);
+  box-shadow: 0 19px 38px rgba(#000, 0.3), 0 15px 12px rgba(#000, 0.22);
 }
 .directors__select {
   -webkit-appearance: none;
@@ -56,7 +57,7 @@ body, h1 {
   background: #2c3e50;
   background-image: none;
   padding: 10px;
-  color: #7AC0F2;
+  color: #7ac0f2;
   margin: 10px;
   width: 200px;
 }
@@ -69,12 +70,12 @@ body, h1 {
   top: 22%;
   right: 15px;
   content: "⌄";
-  color: #7AC0F2;
+  color: #7ac0f2;
 }
 
 .directors__option {
   padding: 10px;
-  color: #7AC0F2;
+  color: #7ac0f2;
 }
 .films__list {
   display: grid;
@@ -86,14 +87,14 @@ body, h1 {
   padding: 0;
 }
 .list__film {
-  background-color: #ECE3D4;
+  background-color: #ece3d4;
   margin: 10px;
   padding: 10px;
   max-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 19px 38px rgba(#000,0.30), 0 15px 12px rgba(#000,0.22);
+  box-shadow: 0 19px 38px rgba(#000, 0.3), 0 15px 12px rgba(#000, 0.22);
 }
 .list__film:hover {
   transform: scale(1.1);
@@ -106,14 +107,27 @@ body, h1 {
 }
 .film__description-title {
   cursor: pointer;
+  position: relative;
+}
+.film__description-title:after {
+  content: "";
+  left: 100%;
+  top: 0;
+  position: absolute;
+  width: 200px;
+  height: 30px;
+  background-image: url("../images/totoro-chibi-walk.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 .film__description-title:hover {
-  color: #5096EB;
+  color: #5096eb;
 }
 .noResults__container {
   text-align: center;
 }
-.noResults__png{
+.noResults__png {
   width: 200px;
 }
 .hidden {
@@ -133,63 +147,5 @@ body, h1 {
 @media (min-width: 1024px) {
   .films__list {
     grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Spinner Slices */
-.spinner {
-  text-align: center;
-}
-.spinner:after {
-  content: '';
-  height: 50px;
-  width: 50px;
-  margin: auto;
-  top: 130px;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  -webkit-animation: rotation .6s infinite linear;
-  -moz-animation: rotation .6s infinite linear;
-  -o-animation: rotation .6s infinite linear;
-  animation: rotation .6s infinite linear;
-  border-left: 6px solid rgba(69, 3, 95, 0.15);
-  border-right: 6px solid rgba(69, 3, 95, 0.15);
-  border-bottom: 6px solid rgba(69, 3, 95, 0.15);
-  border-top: 6px solid rgba(69, 3, 95, 0.8);
-  border-radius: 100%;
-}
-
-@-webkit-keyframes rotation {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(359deg);
-  }
-}
-@-moz-keyframes rotation {
-  from {
-    -moz-transform: rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(359deg);
-  }
-}
-@-o-keyframes rotation {
-  from {
-    -o-transform: rotate(0deg);
-  }
-  to {
-    -o-transform: rotate(359deg);
-  }
-}
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
   }
 }

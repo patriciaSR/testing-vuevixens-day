@@ -11,7 +11,7 @@ function printFilm(film) {
   const newFilm = createTag('li', '', 'list__film');
 
   const newTitle = createTag('h2', film.title, 'film__title');
-  const newDescriptionTitle = createTag('h3', 'Description >', 'film__description-title');
+  const newDescriptionTitle = createTag('h3', 'Description', 'film__description-title');
   const newDescription = createTag('p', film.description, 'film__description-text');
 
   newDescription.classList.add('hidden');
