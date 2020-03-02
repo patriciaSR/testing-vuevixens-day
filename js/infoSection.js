@@ -1,5 +1,3 @@
-import { createTag } from './createTags.js';
-
 const totoroSad = './images/totoroSad.gif';
 const totoroNotFound = './images/totoroNotFound.png';
 
@@ -25,20 +23,5 @@ function errorMessage(infoSection) {
 }
 
 
-function addLoader(infoSection) {
-  const newLoader = createTag('p', 'Loading...', 'spinner');
-
-  infoSection.appendChild(newLoader);
-
-  return infoSection;
-}
-
-function removeLoader() {
-  const spinner = document.querySelector('.spinner');
-  if (spinner) {
-    spinner.remove();
-  }
-}
-
-export { noResults, errorMessage, addLoader, removeLoader };
+export { noResults, errorMessage };
 
