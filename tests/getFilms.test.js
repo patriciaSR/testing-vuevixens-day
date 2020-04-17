@@ -10,18 +10,12 @@ function stubFunction(moduleName, fnName) {
 
 describe('getFilms function', () => {
   let printFilms;
-  let addLoader;
-  let removeLoader;
   let callApi;
   let getFilms;
-  let timeout;
 
   beforeEach(() => {
     printFilms = stubFunction('../js/printFilms.js', 'printFilms');
-    addLoader = stubFunction('../js/infoSection.js', 'addLoader');
-    removeLoader = stubFunction('../js/infoSection.js', 'removeLoader');
     callApi = stubFunction('../js/callApi.js', 'callApi');
-    timeout = stubFunction('../js/timeout.js', 'timeout');
 
     // Import "getFilms" aftermocking everything
     getFilms = require('../js/getFilms.js').getFilms;
@@ -29,28 +23,6 @@ describe('getFilms function', () => {
 
   afterEach(() => {
     jest.resetModules();
-  });
-
-  test('it shows a loading spinner when called', async () => {
-    const infoSection = 'foo';
-
-    await getFilms(infoSection);
-
-    expect(addLoader).toHaveBeenCalledWith(infoSection);
-  });
-
-  test('it waits 2 seconds before load the films', async () => {
-    const time = 2000;
-
-    await getFilms();
-
-    expect(timeout).toHaveBeenCalledWith(time);
-  });
-
-  test('it removes the loading spinner when called', async () => {
-    await getFilms();
-
-    expect(removeLoader).toHaveBeenCalled();
   });
 
   test('it calls to the films API when called', async () => {

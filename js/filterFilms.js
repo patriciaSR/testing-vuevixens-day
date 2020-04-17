@@ -5,28 +5,11 @@ function isTextIncluded(film, queryText) {
    || film.description.toLowerCase().includes(queryText);
 }
 
-function filterFilms(films, filters) {
-  const { queryText, director } = filters;
-
-  const filteredFilms = films
-    .filter((film) => isTextIncluded(film, queryText))
-    .filter((film) => (director ? film.director === director : true));
+function filterFilms(films, queryText) {
+  const filteredFilms = films.filter((film) => isTextIncluded(film, queryText));
 
   return filteredFilms;
 }
 
-function getFilters(queryInput = '') {
-  let queryText = queryInput.value;
-  let director = document.querySelector('.directors__select').value;
+export { filterFilms, isTextIncluded };
 
-  if (director === 'Select a film director...') {
-    director = null;
-  }
-  if (!queryText) {
-    queryText = '';
-  }
-
-  return { queryText, director };
-}
-
-export { filterFilms, getFilters, isTextIncluded };
