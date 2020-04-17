@@ -1,6 +1,8 @@
 # VueVixens Day - La Magia del Testing
 
-Creamo un buscador de películas del Estudio Ghibli interactivo usando JavaScript vanilla, CSS y HTML5 para aprender la importancia del testing.
+![La Magia del Testing](./images/testing-screenshot.png)
+
+Creamos un buscador de películas del Estudio Ghibli interactivo usando JavaScript vanilla, CSS y HTML5 para aprender la importancia del testing.
 
 El ejercicio consiste en desarrollar una web de búsqueda de películas del Estudio Ghibli, donde podemos filtrar por nombre y descripción y testearla. 
 
