@@ -1,26 +1,26 @@
 const ENDPOINTGOOD = './fixtures.filmsApi.js';
-const ENDPOINTBAD = 'https://ghibliapi.herokuappjasdjkh';
+const ENDPOINTBAD = 'https://WRONGghibliapi.com';
 
 const mockFilms = [
   {
-    title: 'bambi',
-    description: 'deer disney',
-    director: 'patricia',
+    title: 'Titanic',
+    description: 'Rose podría haberle hecho un hueco a Jack perfectamente. ¡No te la pierdas!',
+    director: 'James Cameron',
   },
   {
-    title: 'dumbo',
-    description: 'elephant disney',
-    director: 'paco',
+    title: 'Avatar',
+    description: 'Aun tendremos que esperar para la segunda parte mucho tiempo. ¡No te la pierdas!',
+    director: 'James Cameron',
   },
   {
-    title: 'nemo',
-    description: 'fish pixar',
-    director: 'luis',
+    title: 'Todo sobre mi madre',
+    description: 'Tu drama favorito. ¡No te la pierdas!',
+    director: 'Almodovar',
   },
   {
-    title: 'the lion king',
-    description: 'lion disney',
-    director: 'luis',
+    title: 'Foodie Love',
+    description: 'Serie para los amantes de la comida.',
+    director: 'Isabel Coixet',
   },
 ];
 

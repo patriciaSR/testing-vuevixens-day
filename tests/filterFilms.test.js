@@ -3,7 +3,7 @@ import { mockFilms } from './fixtures/variables-fixtures.js';
 
 describe('isTextIncluded function', () => {
   test('it returns true if title film is equal to query test', () => {
-    const queryText = 'bambi';
+    const queryText = 'titanic';
     const film = mockFilms[0];
 
     const result = isTextIncluded(film, queryText);
@@ -12,7 +12,7 @@ describe('isTextIncluded function', () => {
   });
 
   test('it returns false if title film is not equal to query test', () => {
-    const queryText = 'lola';
+    const queryText = 'El rey león';
     const film = mockFilms[0];
 
     const result = isTextIncluded(film, queryText);
@@ -39,8 +39,8 @@ describe('filterFilms function , filter films by queries', () => {
     expect(result).toEqual(mockFilms);
   });
 
-  test('it returns all elements that contains "bambi"', () => {
-    const queryText = 'bambi';
+  test('it returns all elements that contains "titanic" in title', () => {
+    const queryText = 'titanic';
     const expected = mockFilms[0];
 
     const result = filterFilms(mockFilms, queryText);
@@ -49,9 +49,9 @@ describe('filterFilms function , filter films by queries', () => {
     expect(result).toContain(expected);
   });
 
-  test('it returns all elements that contains "dis" in description', () => {
-    const queryText = 'dis';
-    const expected = [mockFilms[0], mockFilms[1], mockFilms[3]];
+  test('it returns all elements that contains "¡No te la pierdas!" in description', () => {
+    const queryText = '¡No te la pierdas!';
+    const expected = [mockFilms[0], mockFilms[1], mockFilms[2]];
 
     const result = filterFilms(mockFilms, queryText);
 
