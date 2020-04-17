@@ -1,32 +1,51 @@
-# ghibli-films
+# VueVixens Day - La Magia del Testing
 
-Buscador de películas del Estudio Ghibli interactivo usando JavaScript vanilla, CSS y HTML5,
+Creamo un buscador de películas del Estudio Ghibli interactivo usando JavaScript vanilla, CSS y HTML5 para aprender la importancia del testing.
 
-El ejercicio consiste en desarrollar una web de búsqueda de películas del Estudio Ghibli, donde podemos filtrar por nombre, descripción y por director.
+El ejercicio consiste en desarrollar una web de búsqueda de películas del Estudio Ghibli, donde podemos filtrar por nombre y descripción y testearla. 
 
 Al cargar, nuestra página debe conectarse a la API abierta de [películas de Ghibli](https://ghibliapi.herokuapp.com/). 
-Por cada película se pinta una tarjeta donde mostramos una imagen de la serie, el título y la descripción de la película.
 
-La descripción de la película está oculta y no se muestra hasta que el usuario hace click sobre el título "description".
+## Cómo Arrancar el proyecto
+
+Primero instala todas las dependencias del `package.json` con el comando:
+`$ npm install`
+
+## Cómo lanzar los Test unitarios
+
+Para arrancar los test lanzar el comando:
+
+`$ npm run test`
+
+para ver los cambios en los test de forma continua:
+
+`$ npm run test:watch` 
+
+para ver la cobertura de nuestros tests:
+
+`$ npm run test:coverage`
+
+para debuggear tus test usa la palabra `debugger` donde quieras poner un punto de interrupción y lanza los test con el comando:
+
+`$ npm run test:debug`
+
+Al lanzar este comando, se genera una carpeta `coverage/`, donde en la carpeta `lcov-report/` podemos abrir el archivo `index.html` usando la extensión de VSCode *Live Server* para ver la cobertura de nuestros test en el código.
+
+## Cómo lanzar los test e2e
+
+Para lanzar los test e2e utiliza el comando:
+`$ npm run test:e2e`
 
 
-## Testing con Jest
+## Configura tu propio proyecto con Jest y Cypress
 
-- test unitarios (testear un único componente)
-- test integracion (que varios componentes funcionen bien entre ellos)
-- test end to end (que demuestre el funcionamiento completo de todo el flujo de la aplicación)
-
-## Instalación de Jest
+### Instalación de Jest en tu proyecto (Test unitarios)
 
 Documentación oficial: https://jestjs.io/docs/en/getting-started;
 
-Crear un package.json para cofigurar jest:
+Instalar jest en tu proyecto:
 
-`$ npm init`
-
-Instalar jest en el repositorio:
-
-` $ npm install --save-dev jest`
+`$ npm install --save-dev jest`
 
 Añadir al `.gitignore` la carpeta `node_modules` y `coverage`:
 
@@ -45,7 +64,7 @@ Añadir babel para transpilar el código ECMASCRIPT 6:
 
 `$ npm install --dev babel-jest @babel/core @babel/preset-env`
 
-Añadir un archivo de configuración de babel `.babelrc`:
+Añadir un archivo de configuración de babel `.babelrc` en la raíz del repositorio:
 
 ```js
 {
@@ -62,13 +81,15 @@ Añadir un archivo de configuración de babel `.babelrc`:
 }
 ```
 
-Configurar el `package.json` para utilizar jest:
+Configurar el `package.json` para utilizar comandos customizados para lanzar los test:
+
 ```js
 "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
-    "test:coverage": "jest --collect-coverage"
+    "test:coverage": "jest --collect-coverage",
+    "test:e2e": "npx cypress open"
 },
 ```
 
@@ -77,12 +98,13 @@ para manejar los fetch en los test:
 
 `$ npm install --save-dev jest-fetch-mock`
 
-Creamos un archivo de configuración `setupJest.js`:
+Creamos un archivo de configuración `setupJest.js` en la raíz del repositorio:
 
 ```js
 //setupJest.js or similar file
 global.fetch = require('jest-fetch-mock')
 ```
+
 Y añadimos al package.json la siguiente configuración:
 ```js
 "jest": {
@@ -93,29 +115,14 @@ Y añadimos al package.json la siguiente configuración:
 }
 ```
 
-## Uso de Jest
+## Instalación de Cypress en tu proyecto (Test e2e)
 
-Para arrancar los test lanzar el comando:
+Documentación oficial: https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell;
 
-`$ npm run test`
+Instalar cypress en tu proyecto:
 
-para ver los cambios en los test de forma continua:
+` $ npm install cypress --save-dev`
 
-`$ npm run test:watch` 
+## Authors
 
-para ver la cobertura de nuestros tests:
-
-`$ npm run test:coverage` 
-
-Al lanzar este comando, se genera una carpeta coverage, donde en la carpeta `lcov-report` podemos abrir el archivo `index.html` para ver la covertura de nuestros test en el código.
-
-### Resultado de la cobertura en el terminal
-![resultado de la cobertura en el terminal](images/tests/Screenshot-coverage.png)
-
-### Resultado de la cobertura en el navegador
-![resultado de la cobertura en el navegador](images/tests/Screenshot-html.png)
-
-
-## Uso de Cypress
-lanzar test e2e:
-`npx cypress open`
+Made with (heart) by [Clara Dios](https://github.com/claradios) and [Patricia Suárez](https://github.com/patriciaSR)
