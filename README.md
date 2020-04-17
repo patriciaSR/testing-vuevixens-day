@@ -127,4 +127,4 @@ Instalar cypress en tu proyecto:
 
 ## Authors
 
-Made with (heart) by [Clara Dios](https://github.com/claradios) and [Patricia Suárez](https://github.com/patriciaSR)
+Made with :heart: by [Clara Dios](https://github.com/claradios) and [Patricia Suárez](https://github.com/patriciaSR)
