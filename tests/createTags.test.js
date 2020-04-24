@@ -1,4 +1,4 @@
-import { addEventToTag, createTag } from '../js/createTags.js';
+import { addEventToTag, createTag } from '../src/js/createTags.js';
 
 describe('createTags module', () => {
   describe('addEventListener function', () => {

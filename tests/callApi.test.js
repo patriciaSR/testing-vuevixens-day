@@ -1,8 +1,8 @@
 
-import { callApi } from '../js/callApi.js';
+import { callApi } from '../src/js/callApi.js';
+import * as infoModule from '../src/js/infoSection.js';
 import { filmsApi } from './fixtures/filmsApi.js';
 import { ENDPOINTGOOD } from './fixtures/variables-fixtures.js';
-import * as infoModule from '../js/infoSection.js';
 
 describe('testing api', () => {
   beforeEach(() => {

@@ -1,4 +1,4 @@
-import { printFilm, printFilms, unfoldDescription } from '../js/printFilms.js';
+import { printFilm, printFilms, unfoldDescription } from '../src/js/printFilms.js';
 import { mockFilms } from './fixtures/variables-fixtures.js';
 
 describe('unfoldDescription function', () => {

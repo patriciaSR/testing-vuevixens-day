@@ -1,5 +1,5 @@
-const totoroSad = './images/totoroSad.gif';
-const totoroNotFound = './images/totoroNotFound.png';
+const totoroSad = './src/images/totoroSad.gif';
+const totoroNotFound = './src/images/totoroNotFound.png';
 
 
 function noResults(list, infoSection) {

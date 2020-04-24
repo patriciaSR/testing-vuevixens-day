@@ -14,11 +14,11 @@ describe('getFilms function', () => {
   let getFilms;
 
   beforeEach(() => {
-    printFilms = stubFunction('../js/printFilms.js', 'printFilms');
-    callApi = stubFunction('../js/callApi.js', 'callApi');
+    printFilms = stubFunction('../src/js/printFilms.js', 'printFilms');
+    callApi = stubFunction('../src/js/callApi.js', 'callApi');
 
     // Import "getFilms" aftermocking everything
-    getFilms = require('../js/getFilms.js').getFilms;
+    getFilms = require('../src/js/getFilms.js').getFilms;
   });
 
   afterEach(() => {

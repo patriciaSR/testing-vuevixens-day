@@ -1,4 +1,4 @@
-import { errorMessage, noResults } from '../js/infoSection.js';
+import { errorMessage, noResults } from '../src/js/infoSection.js';
 
 describe('infoSection testing', () => {
   beforeEach(() => {

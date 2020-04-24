@@ -1,4 +1,4 @@
-import { filterFilms, isTextIncluded } from '../js/filterFilms.js';
+import { filterFilms, isTextIncluded } from '../src/js/filterFilms.js';
 import { mockFilms } from './fixtures/variables-fixtures.js';
 
 describe('isTextIncluded function', () => {
