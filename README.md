@@ -2,6 +2,8 @@
 
 ![La Magia del Testing](./src/images/testing-screenshot.png)
 
+Slides de la charla: [La Magia del Testing](https://www.canva.com/design/DAD1ZmXqiCE/0SVrADpsv8WNaJyjuT6kiw/view)
+
 Creamos un buscador de películas del Estudio Ghibli interactivo usando JavaScript vanilla, CSS y HTML5 para aprender la importancia del testing.
 
 El ejercicio consiste en desarrollar una web de búsqueda de películas del Estudio Ghibli, donde podemos filtrar por nombre y descripción y testearla. 
