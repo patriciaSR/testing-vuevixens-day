@@ -31,11 +31,14 @@ describe('isTextIncluded function', () => {
 });
 
 describe('filterFilms function , filter films by queries', () => {
-  test('it returns all elements if filter is empty', () => {
+  test('it returns all elements if queryText is empty', () => {
+    // GIVEN
     const queryText = '';
 
+    // WHEN
     const result = filterFilms(mockFilms, queryText);
 
+    // THEN
     expect(result).toEqual(mockFilms);
   });
 
